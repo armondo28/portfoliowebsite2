@@ -7,6 +7,10 @@
     flex-direction: column;
     height: 120px;
     padding: 20px;
+
+    li {
+      margin: 0 -0.6rem;
+    }
   }
 
   .flex-items {
@@ -17,12 +21,12 @@
     div {
       :nth-child(1) {
         border-right: none !important;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
       }
 
       :nth-child(3) {
         border-left: none !important;
-        margin-top: 1rem;
+        margin-top: 2rem;
       }
     }
   }

@@ -276,6 +276,8 @@ img {
     flex-direction: column;
     height: 120px;
     padding: 20px; }
+  .top li {
+    margin: 0 -0.6rem; }
   .flex-items {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -283,10 +285,10 @@ img {
     flex-direction: column; }
   #about div :nth-child(1) {
     border-right: none !important;
-    margin-bottom: 1rem; }
+    margin-bottom: 2rem; }
   #about div :nth-child(3) {
     border-left: none !important;
-    margin-top: 1rem; }
+    margin-top: 2rem; }
   .flex-columns .row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
