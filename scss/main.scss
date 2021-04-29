@@ -1,0 +1,338 @@
+@import "config";
+@import "blog";
+@import "mediaq";
+
+// Header/Navbar
+
+// The key to a navbar is we need to always make it flex. aligned. space between w/ a background color and color of font. opacity gives it a clean look width needs needs to be 100% to take up the whole area height. top 0 px so it sticks to the top. position is fixed so it's always at the top. padding of 0 30 px on both sides and transition of .5s
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: white;
+  width: 100%;
+  height: 60px;
+  top: 0px;
+  position: fixed;
+  padding: 0 30px;
+  transition: 0.5s;
+
+  span {
+    color: $gold-color;
+  }
+
+  &.second {
+    background: transparent;
+  }
+
+  .logo {
+    font-weight: 100;
+    opacity: 0.8;
+  }
+
+  // we're grabbing the ul's and making them flex which will automatically make put them in a row
+
+  ul {
+    display: flex;
+  }
+
+  // we're grabbin the links making them white 10px top and bottom 20 px both sides margin 5px both sides
+
+  a {
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+
+    &:hover {
+      border-bottom: silver 2px solid;
+      transition: color 0.3s ease-in-out;
+    }
+  }
+}
+
+// Header
+
+// Below we took the background no repeat made it centered/cover taking up 100vh position relative so we can later put the overlay over it.
+
+.cruz {
+  background: url(../img/Showcase3.jpg) no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  color: #fff;
+
+  // We're takin the content class displaying it flex column so they stack up on each other centered height 100% padding 0 top and bottom 20 px both
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    padding: 0 10px;
+
+    a {
+      color: #fff;
+      opacity: 0.8;
+
+      &:hover {
+        color: $gold-color;
+        transition: color 0.5s ease-in-out;
+        background-color: transparent !important;
+      }
+    }
+
+    // Below we're setting up the words inside content we want the font size to be the correct size max width is 600px so it doesn't over extend on bigger screens. margin is 20px 0 30px opactiy is .9 to give a cleaner look
+
+    p {
+      font-size: 23px;
+      max-width: 600px;
+      margin: 20px 0 30px;
+      opacity: 0.7;
+    }
+
+    // We also have to grab the h1 to make the correct size and setting its opacity to .9
+
+    h1 {
+      font-size: 55px;
+      opacity: 0.5;
+
+      span {
+        color: $gold-color;
+      }
+    }
+  }
+}
+
+// Below we're setting up the overlay we're always putting a content thats empty then position absolute then we add top 0 left 0 width 100% height 100% so that it takes up the entire area then we use rgba black w/ a opacity of .2
+
+.cruz::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+// we don't want overlay to be over the text so we create a z-index for all properties inside cruz to 10
+
+.cruz * {
+  z-index: 10;
+}
+
+// about section
+
+// we're making the 3 icons section 230px tall
+
+#about {
+  // we're making the icons have 30px space between them
+  padding: 30px;
+  color: $gold-color;
+
+  //we're giving each div a space of 30px off each other and the side of the pages
+
+  div {
+    padding: 0 30px;
+
+    // we're adding a solid gold border to icons 1 and 3 on the right and on the left to give  it a clean look
+
+    :nth-child(1) {
+      border-right: $gold-color solid 1px;
+    }
+
+    :nth-child(3) {
+      border-left: $gold-color solid 1px;
+    }
+  }
+}
+// we're targeting the icons and making them 2.5rem size with some margin on the bottom to create space
+
+i {
+  margin-bottom: 19px;
+  border-right: none !important;
+}
+
+// we're making the h3 bold w/ some margin and grey color
+
+h3 {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: $light-color;
+  border-right: none !important;
+}
+
+// no border
+
+p {
+  border-left: none !important;
+}
+
+// solutions
+
+.solutions {
+  // we're making the img block so that it fills the area the height is 500px bcz it was too tall before and we're covering the entire space
+
+  img {
+    display: block;
+    height: 500px;
+    object-fit: cover;
+  }
+}
+
+// This is what we do section
+
+#cases {
+  // the section where we talk about what we do I made it 250px tall
+  .section-header {
+    height: 250px;
+
+    // The header attributes below
+
+    h4 {
+      font-size: 1.8rem;
+      color: $gold-color;
+      margin-bottom: 40px;
+      margin-top: -30px;
+    }
+
+    // paragraph atts below
+
+    p {
+      margin-top: 10px;
+      margin-bottom: -20px;
+    }
+  }
+
+  // we put all imgs under column atts w/ a height of 350px and cover
+
+  .row {
+    .column {
+      img {
+        height: 350px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// Meet the team section
+
+#team {
+  // header atts below
+
+  header {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 240px;
+    // heading atts below
+    h4 {
+      font-size: 1.2rem;
+      margin-top: 4rem;
+      color: $gold-color;
+    }
+    // 2nd headings atts below
+
+    h2 {
+      margin: 1rem 0;
+      font-size: 2.5rem;
+    }
+
+    // This is how to create a custom border for an element(very important)
+
+    h2:after {
+      content: "";
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      border-bottom: 1px solid $gold-color;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      margin-top: 2rem;
+    }
+  }
+  // below are the photos I made them all the same height and width each img to cover w/ a border radius of 50%. I also had to crop and resize the photos in order for them to fit correctly
+  .flex-items {
+    div {
+      height: 400px;
+      width: 400px;
+
+      img {
+        object-fit: cover;
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        margin: 0 3rem;
+      }
+    }
+  }
+}
+
+// below is the contact form section we took the img within the form and made it 600px cover bottom so we can see the guy and made the photo block so it could take up the entire area
+
+#contact {
+  .column-1 {
+    img {
+      height: 600px;
+      object-fit: cover;
+      object-position: bottom;
+      display: block;
+    }
+  }
+  // heading atts below
+
+  h2 {
+    margin-bottom: 0.6rem;
+  }
+  // callback form is block takes up entire width
+  .callback-form {
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    // btn atts below
+    .btn {
+      margin-top: 1rem;
+      font-size: 16px;
+      font-weight: bold;
+      width: 100%;
+      height: 14;
+    }
+    // gives spaces between each input below
+    .form-control {
+      margin-bottom: 15px;
+      // below are the actual inputs
+      input {
+        padding: 7px 4px;
+        width: 100%;
+        border: white solid 1px;
+        border-radius: 5px;
+        outline: none;
+      }
+    }
+  }
+}
+// footer atts below we made into flex column so they stack on each other everything centered and the height is 180px
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 180px;
+  // these are the social media symbols below
+  .social {
+    margin-bottom: 0.5rem;
+    a {
+      color: $gold-color;
+      margin: 0 0.7rem;
+    }
+  }
+}

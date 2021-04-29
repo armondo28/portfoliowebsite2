@@ -1,0 +1,101 @@
+// everything blog related
+
+// Blog page header
+
+// ALWAYS USE BACKGROUND AND NOT BACKGROUND IMG!!!
+// .blog is where we put the background img
+.blog {
+  background: url(/dist/img/blog/journal.jpg) no-repeat center center/cover;
+  position: relative;
+  // below is the blog word atts
+  .content {
+    color: #fff;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 180px;
+  }
+}
+
+// below is for the overlay
+
+.blog::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+// below is for the words to not be affected by overlay
+
+.blog * {
+  z-index: 10;
+}
+
+// all three below are to make the blog photos uniform
+
+.blog1 {
+  img {
+    height: 450px;
+    display: block;
+    object-position: bottom;
+  }
+}
+
+.blog2 {
+  img {
+    height: 450px;
+    display: block;
+    object-position: bottom;
+  }
+}
+
+.blog3 {
+  img {
+    height: 450px;
+    display: block;
+    object-position: bottom;
+  }
+}
+
+.post {
+  margin: 3rem 1.5rem;
+  // below I made the img 400px both ways I had to make it block w/ a margin of 0 auto and 30px in order to center it independently on the page
+  h4 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 30px;
+  }
+
+  h4::after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 99%;
+    border-bottom: 1px solid black;
+  }
+
+  .meta {
+    font-size: 1.1;
+
+    i {
+      margin-right: 0.3rem;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}

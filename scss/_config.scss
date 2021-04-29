@@ -1,0 +1,216 @@
+// This is where im putting all my variables and utilites
+
+$main-color: #240090;
+$gold-color: rgb(247, 219, 62);
+$light-color: rgb(224, 218, 218);
+$grey-color: #282828;
+$text: rgb(21, 20, 24);
+
+// below are the settings before we get started
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// we're making the entire background a navy blue we're using bree serif
+
+body {
+  background: white;
+  font-family: "Bree Serif", serif;
+  color: $text;
+  line-height: 1.6;
+}
+
+// for list we always take away the underline
+
+ul {
+  list-style: none;
+}
+
+// links need to be a diff color w/ no underline
+
+a {
+  color: $light-color;
+  text-decoration: none;
+}
+
+// headings need to be a bit bigger
+
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+// words needs to have space between
+
+p {
+  margin: 10px 0;
+  line-height: 2rem;
+}
+
+// We want images to only take up 100% of the screen
+img {
+  width: 100%;
+}
+
+// Backgrounds abd buttons
+
+.bg,
+.btn {
+  &-light {
+    background: $light-color;
+    color: black;
+  }
+
+  &-dark {
+    background: $grey-color;
+    color: $light-color;
+  }
+
+  &-primary {
+    background: $gold-color;
+    color: $grey-color;
+  }
+}
+
+// btn for all btns
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 30px;
+  color: black;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: white;
+  }
+
+  &-outline {
+    background: transparent;
+    border: 1px solid #fff;
+  }
+}
+
+// Flex items
+
+// below we made sure to make everything flex and in a row centered and taking up the entire area
+
+.flex-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 30px;
+
+  .flex-items > div {
+    padding: 20px;
+  }
+}
+// Flex columns
+
+// Below we're taking the flex columns and reversing the rows
+
+.flex-columns.flex-reverse .row {
+  flex-direction: row-reverse;
+}
+
+// we're grabbing the row class makin it into a row takes up the entire width and wraps
+
+.flex-columns .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+// this grabs the column class make it flex column flex basis 100% 1 also we're making column so everything inside them stack on each other WE NEED FLEX 1 to make sure everything is the same size
+
+.flex-columns .column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+// we want the these columns to take up the entire area height wise
+
+.flex-columns .column .column-1,
+.flex-columns .column .column-2 {
+  height: 100%;
+}
+
+// Below we're setting this so that when we make it smaller it the picture doesn't get smaller
+
+.flex-columns img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Below we're grabbing the 2nd column and making it flex. column to stack them on top of each other and flex start to put it on the left side. justify content center and padding 30px all sides
+
+.flex-columns .column-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 30px;
+}
+
+// h2's inside flex columns are always 40px font weight 100
+
+.flex-columns h2 {
+  font-size: 40px;
+  font-weight: 100;
+}
+
+// always has 10px margin bottom
+
+.flex-columns h4 {
+  margin-bottom: 10px;
+}
+
+// flex columns p always has px margin top and bottom
+
+.flex-columns p {
+  margin: 20px 0;
+}
+
+/* Section header */
+
+.section-header {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+.section-padding {
+  padding: 20px 20px 40px;
+}
+
+/* Flex grid */
+.flex-grid .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.flex-grid .column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}

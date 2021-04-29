@@ -1,0 +1,46 @@
+// media queries
+
+// Essentially we're making all the rows stack against each other.
+
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    height: 120px;
+    padding: 20px;
+  }
+
+  .flex-items {
+    flex-direction: column;
+  }
+
+  #about {
+    div {
+      :nth-child(1) {
+        border-right: none !important;
+        margin-bottom: 1rem;
+      }
+
+      :nth-child(3) {
+        border-left: none !important;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .flex-columns {
+    .row {
+      flex-direction: column;
+    }
+
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+  .flex-grid {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+}
