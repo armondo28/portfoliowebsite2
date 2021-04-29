@@ -305,7 +305,9 @@ img {
     -webkit-box-flex: 100%;
     -ms-flex: 100%;
     flex: 100%;
-    max-width: 100%; } }
+    max-width: 100%; }
+  .blog .content {
+    height: 350px; } }
 
 .top {
   display: -webkit-box;

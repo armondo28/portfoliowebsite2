@@ -358,6 +358,9 @@ img {
             flex: 100%;
     max-width: 100%;
   }
+  .blog .content {
+    height: 350px;
+  }
 }
 
 .top {
