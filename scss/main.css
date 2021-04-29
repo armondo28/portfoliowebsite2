@@ -218,7 +218,7 @@ img {
 }
 
 .blog {
-  background: url(../dist/img/blog/journal.jpg) no-repeat center center/cover;
+  background: url(../img/blog/journal.jpg) no-repeat center center/cover;
   position: relative;
 }
 
